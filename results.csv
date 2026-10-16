@@ -1,0 +1,7 @@
+run,pretrained,augment,seed,epochs,val_top1,test_top1,test_top5
+resnet18_pretrained_seed0,True,True,0,10,0.9420,0.8994,0.9926
+resnet18_pretrained_seed1,True,True,1,10,0.9293,0.8981,0.9916
+resnet18_pretrained_seed2,True,True,2,10,0.9366,0.9016,0.9910
+resnet18_scratch_seed0,False,True,0,30,0.4946,0.4132,0.7691
+resnet18_scratch_seed1,False,True,1,30,0.4692,0.4009,0.7667
+resnet18_scratch_seed2,False,True,2,30,0.5127,0.4129,0.7678

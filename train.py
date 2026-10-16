@@ -1,13 +1,3 @@
-"""Train a ResNet-18 on Oxford-IIIT Pets (37 breeds).
-
-Examples:
-    python train.py                    # pretrained (fine-tuning), seed 0
-    python train.py --seed 1
-    python train.py --scratch          # ablation: no pretraining
-    python train.py --epochs 2         # quick test run
-
-Saves the best model (by validation accuracy) to models/ and a results line to results.csv.
-"""
 import argparse
 import csv
 import os
