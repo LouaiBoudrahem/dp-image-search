@@ -1,0 +1,55 @@
+                            precision    recall  f1-score   support
+
+                Abyssinian      0.809     0.908     0.856        98
+          American Bulldog      0.746     0.880     0.807       100
+ American Pit Bull Terrier      0.797     0.510     0.622       100
+              Basset Hound      0.956     0.870     0.911       100
+                    Beagle      0.841     0.950     0.892       100
+                    Bengal      0.770     0.940     0.847       100
+                    Birman      0.846     0.770     0.806       100
+                    Bombay      0.892     0.943     0.917        88
+                     Boxer      0.820     0.919     0.867        99
+         British Shorthair      0.932     0.820     0.872       100
+                 Chihuahua      0.932     0.820     0.872       100
+              Egyptian Mau      0.943     0.856     0.897        97
+    English Cocker Spaniel      0.939     0.930     0.935       100
+            English Setter      0.959     0.930     0.944       100
+        German Shorthaired      0.870     1.000     0.930       100
+            Great Pyrenees      0.979     0.930     0.954       100
+                  Havanese      0.968     0.920     0.944       100
+             Japanese Chin      0.970     0.980     0.975       100
+                  Keeshond      1.000     0.990     0.995        99
+                Leonberger      0.980     0.990     0.985       100
+                Maine Coon      0.837     0.820     0.828       100
+        Miniature Pinscher      0.904     0.940     0.922       100
+              Newfoundland      0.960     0.970     0.965       100
+                   Persian      0.920     0.800     0.856       100
+                Pomeranian      0.913     0.950     0.931       100
+                       Pug      0.980     0.980     0.980       100
+                   Ragdoll      0.734     0.800     0.766       100
+              Russian Blue      0.935     0.860     0.896       100
+             Saint Bernard      0.908     0.990     0.947       100
+                   Samoyed      0.961     0.980     0.970       100
+          Scottish Terrier      0.907     0.980     0.942        99
+                 Shiba Inu      0.934     0.990     0.961       100
+                   Siamese      0.890     0.890     0.890       100
+                    Sphynx      0.969     0.930     0.949       100
+Staffordshire Bull Terrier      0.703     0.584     0.638        89
+           Wheaten Terrier      0.941     0.950     0.945       100
+         Yorkshire Terrier      0.970     0.980     0.975       100
+
+                  accuracy                          0.899      3669
+                 macro avg      0.900     0.899     0.897      3669
+              weighted avg      0.901     0.899     0.898      3669
+
+Most confused (true -> predicted: count)
+  American Pit Bull Terrier -> Staffordshire Bull Terrier: 15
+  Egyptian Mau -> Bengal: 14
+  Birman -> Ragdoll: 14
+  American Pit Bull Terrier -> American Bulldog: 13
+  Staffordshire Bull Terrier -> American Bulldog: 12
+  American Pit Bull Terrier -> German Shorthaired: 10
+  Staffordshire Bull Terrier -> American Pit Bull Terrier: 9
+  Ragdoll -> Birman: 9
+  Basset Hound -> Beagle: 9
+  Persian -> Maine Coon: 8

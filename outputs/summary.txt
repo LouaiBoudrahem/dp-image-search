@@ -1,0 +1,6 @@
+Test set results (mean ± std over seeds)
+
+resnet18_pretrained (3 seeds): top1 90.0 ± 0.2% | top5 99.2 ± 0.1% | precision@5 89.3 ± 0.3%
+resnet18_scratch (3 seeds): top1 40.9 ± 0.7% | top5 76.8 ± 0.1% | precision@5 30.9 ± 0.9%
+baseline majority class ('Abyssinian'): top1 2.7%
+baseline raw-pixel search (32x32): precision@5 5.9%

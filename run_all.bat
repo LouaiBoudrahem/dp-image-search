@@ -1,5 +1,5 @@
 @echo off
-REM Runs all 6 training runs one after another. Leave it overnight.
+REM
 cd /d "%~dp0"
 for %%s in (0 1 2) do python train.py --seed %%s
 for %%s in (0 1 2) do python train.py --scratch --seed %%s
