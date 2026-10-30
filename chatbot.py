@@ -12,6 +12,7 @@ from ollama import AsyncClient
 
 BASE = Path(__file__).resolve().parent
 DEFAULT_MODEL = os.environ.get("OLLAMA_MODEL", "qwen2.5:7b")
+HEADERS = {}
 
 SYSTEM_PROMPT = """You are an assistant that explores a collection of 7,349 pet images \
 (37 cat and dog breeds, Oxford-IIIT Pets) using a fine-tuned ResNet-18.
