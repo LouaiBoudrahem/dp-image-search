@@ -4,12 +4,12 @@ Chatbot (LLM via Ollama + MCP server) that explores the Oxford-IIIT Pets images 
 
 ## Setup
 ```
-pip install torch torchvision scikit-learn matplotlib numpy ollama "mcp<2"
+pip install torch torchvision scikit-learn matplotlib numpy pillow ollama "mcp<2"
 ```
 (For an NVIDIA GPU, install the CUDA build of PyTorch from https://pytorch.org/get-started/locally/.)
 or
 ```
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu12
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
 
 ## Image model
@@ -27,7 +27,7 @@ Generate database files for the chatbot:
 python evaluate.py
 ```
 
-## Output for the MCP tools (coming next)
+## Output for the MCP tools
 - `index.csv`: `path, true_label, predicted_label, confidence`, one row per image
 - `embeddings.npy`: one 512-number row per image, same order as `index.csv`
 - `classes.json`: the 37 class names
@@ -57,8 +57,18 @@ Once the chatbot is running, try asking these questions to test the different to
 * Test filtering (filter_images): "Montre-moi quelques exemples de chats Persans où le modèle est sûr de sa prédiction à plus de 90 %."
 * Test counting (count_by): "Combien d'images de Carlin (pug) le modèle a-t-il trouvé au total ?"
 * Test similarity (find_similar): "Trouve-moi les 3 images qui ressemblent le plus à la photo 'Abyssinian_100'."
-* Test classification (classify): "Quelles sont les 3 races les plus probables selon le modèle pour le fichier
+* Test classification (classify): "Quelles sont les 3 races les plus probables selon le modèle pour le fichier beagle_12 ?"
+* Test chaining two tools (most_confused + filter_images): "Avec quelle race le modèle confond-il le plus le Ragdoll ? Montre-moi ensuite des images de cette race prédites à plus de 90 %."
 
+## Chatbot evaluation
+
+`chatbot_tests.json` contains 20 test queries (15 single-tool, 5 that chain two tools) with the expected tool and arguments.
+`eval_chatbot.py` sends them to the LLM and reports the rate of correct tool calls (right tools, and right tools + right arguments):
+```
+python eval_chatbot.py                                   # local model (qwen2.5:7b)
+python eval_chatbot.py --model llama3.1:8b --host http://HOTE_CRIL:11434
+```
+Results are written to `outputs/chatbot_eval_<model>.csv` (one row per query) and `outputs/chatbot_eval_<model>.txt` (summary).
 ## Response Example
 
 bot > Le modèle confond le plus le Staffordshire Bull Terrier avec l'American Pit Bull Terrier, suivi de l'American Bulldog et du Boxer. 
