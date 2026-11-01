@@ -151,7 +151,7 @@ def main():
 
     all_data = ConcatDataset([trainval, test])
     emb, probs, y = predict(model, DataLoader(all_data, shuffle=False, **kw), device)
-    paths = [str(p) for p in trainval._images] + [str(p) for p in test._images]
+    paths = [p.as_posix() for p in trainval._images] + [p.as_posix() for p in test._images]
     splits = ["trainval"] * len(trainval) + ["test"] * len(test)
     np.save("outputs/embeddings.npy", emb.astype(np.float32))
     with open("outputs/index.csv", "w", encoding="utf-8") as f:

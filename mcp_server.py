@@ -16,6 +16,7 @@ MODEL_PATH = BASE / "models" / "resnet18_pretrained_seed0.pt"
 with open(OUT / "index.csv", encoding="utf-8") as f:
     ROWS = list(csv.DictReader(f))
 for r in ROWS:
+    r["path"] = r["path"].replace("\\", "/")  
     r["id"] = int(r["id"])
     r["confidence"] = float(r["confidence"])
     r["file"] = Path(r["path"]).stem
