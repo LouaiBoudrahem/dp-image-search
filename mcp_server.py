@@ -104,8 +104,10 @@ def classify(image: str) -> dict:
     except ValueError as err:
         return {"error": str(err)}
     if probs is None:
-        if not MODEL_PATH.exists():
-            return {"image": short(r)}
+        if not MODEL_PATH.exists() or not (BASE / r["path"]).is_file():
+            # pas d'image (data/ absent) : prédiction déjà calculée dans index.csv
+            return {"image": short(r),
+                    "note": "image file not available locally: stored prediction from index.csv (no top-3)"}
         _, probs = run_model(BASE / r["path"])
     top = np.argsort(-probs)[:3]
     result = {"top3": [{"breed": CLASSES[i], "probability": round(float(probs[i]), 3)} for i in top]}
