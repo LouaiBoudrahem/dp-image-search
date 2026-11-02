@@ -1,0 +1,5 @@
+Modèle : qwen2.5:7b | 20 requêtes (15 à 1 outil, 5 enchaînées)
+Bons outils             : 90 %
+Bons outils + arguments : 85 %
+  requêtes à 1 outil    : 93 %
+  requêtes enchaînées   : 60 %
