@@ -15,7 +15,7 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ## Image model
 - `python train.py` trains a pretrained ResNet-18 (seed 0). Options: `--seed N`, `--scratch`, `--epochs N`.
 - `run_all.bat` runs all 6 runs (3 seeds pretrained + 3 seeds scratch).
-- Results go to `results.csv`, weights to `models/` (not in git: too big).
+- Results go to `results.csv`, weights to `models/` (the 6 trained checkpoints, 3 seeds × pretrained/scratch, are included in the repository).
 
 To train the model:
 ```
